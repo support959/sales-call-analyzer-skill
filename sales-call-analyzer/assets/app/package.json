@@ -1,0 +1,13 @@
+{
+  "name": "sales-call-analyzer-app",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Local tool: drop a sales/diagnostic call recording, get a Hebrew analysis report.",
+  "scripts": {
+    "start": "node server.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

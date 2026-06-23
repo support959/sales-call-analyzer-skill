@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>%%BRAND_NAME%%</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/style.css" />
+  <style>:root{ --brand: %%BRAND_COLOR%%; }</style>
+</head>
+<body>
+  <main class="wrap">
+    <header class="head">
+      <h1>%%BRAND_NAME%%</h1>
+      <p class="sub">העלו הקלטת שיחה, הדביקו תמליל, או טענו קובץ טקסט — וקבלו דוח ניתוח מלא.</p>
+    </header>
+
+    <section class="card" id="inputCard">
+      <div class="tabs" role="tablist">
+        <button class="tab is-active" data-tab="audio" type="button">🎙️ הקלטה</button>
+        <button class="tab" data-tab="text" type="button">📝 טקסט / תמליל</button>
+      </div>
+
+      <div class="pane" data-pane="audio">
+        <label class="drop" id="drop">
+          <input type="file" id="audioInput" accept="audio/*" hidden />
+          <span class="drop-icon">⬆️</span>
+          <span class="drop-main">גררו לכאן קובץ הקלטה או לחצו לבחירה</span>
+          <span class="drop-sub">MP3 / M4A / WAV · עד 25MB · עדיף מונו</span>
+        </label>
+        <p class="file-name" id="fileName" hidden></p>
+        <p class="hint" id="audioHint" hidden>כדי לנתח הקלטות צריך מפתח OpenAI בקובץ ההגדרות (.env). אפשר במקום זאת להדביק תמליל בלשונית "טקסט".</p>
+      </div>
+
+      <div class="pane" data-pane="text" hidden>
+        <textarea id="textInput" rows="10" placeholder="הדביקו כאן את תמליל השיחה..."></textarea>
+        <button class="link-btn" id="useSample" type="button">טען שיחת דוגמה</button>
+      </div>
+
+      <button class="cta" id="analyzeBtn" type="button">נתח את השיחה</button>
+      <p class="err" id="err" hidden></p>
+    </section>
+
+    <section class="status" id="status" hidden>
+      <div class="spinner"></div>
+      <p id="statusText">מנתח...</p>
+    </section>
+
+    <section class="report" id="report" hidden></section>
+
+    <footer class="foot">הניתוח רץ במחשב שלכם. ההקלטה נשלחת רק לשירותי התמלול והניתוח שלכם — ולא לשום מקום אחר.</footer>
+  </main>
+  <script src="/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,7 @@
+# Never commit secrets or local recordings.
+.env
+*.mp3
+*.m4a
+*.wav
+*.ogg
+node_modules/

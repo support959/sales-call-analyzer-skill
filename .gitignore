@@ -1,0 +1,13 @@
+# Secrets & local recordings must never be committed.
+.env
+.env.local
+**/.env
+*.mp3
+*.m4a
+*.wav
+*.ogg
+
+# Dependencies / OS noise
+node_modules/
+.DS_Store
+Thumbs.db
