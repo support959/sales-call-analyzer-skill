@@ -106,6 +106,7 @@ function renderReport(r, transcript) {
 
   const overall = Number(r.overall_score) || 0;
   const scores = Array.isArray(r.scores) ? r.scores : [];
+  const focus = Array.isArray(r.focus_points) ? r.focus_points : [];
   const insights = Array.isArray(r.insights) ? r.insights : [];
   const strengths = Array.isArray(r.strengths) ? r.strengths : [];
   const improvements = Array.isArray(r.improvements) ? r.improvements : [];
@@ -124,6 +125,8 @@ function renderReport(r, transcript) {
       </div>
     </div>
 
+    ${focus.length ? `<div class="focus"><div class="focus-title">🎯 נקודות פוקוס לשיחה הבאה</div><ul>${focus.map((f) => `<li>${esc(f)}</li>`).join('')}</ul></div>` : ''}
+
     ${insights.length ? `<h3>תובנות מפתח</h3><ul class="bullets">${insights.map((i) => `<li>${esc(i)}</li>`).join('')}</ul>` : ''}
 
     <h3>ציוני איכות</h3>
@@ -136,7 +139,7 @@ function renderReport(r, transcript) {
 
     ${objections.length ? `<h3>התנגדויות</h3>${objections.map((o) => `
       <div class="obj">
-        <p class="obj-q">❓ ${esc(o.objection || '')}</p>
+        <p class="obj-q">❓ ${esc(o.objection || '')}${o.type ? ` <span class="obj-type">${esc(o.type)}</span>` : ''}</p>
         <p><b>איך טופל:</b> ${esc(o.how_handled || '')}</p>
         <p class="obj-better"><b>תשובה טובה יותר:</b> ${esc(o.better_response || '')}</p>
       </div>`).join('')}` : ''}

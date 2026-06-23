@@ -130,19 +130,26 @@ and only then tell them it's ready — and show them what a report looks like.
 
 ## The analysis quality bar
 
-The report is only as good as the standard it's held to. The scoring rubric and the exact output
-shape live in `prompts/analysis-prompt.md` (operative) and are explained in
-`references/analysis-rubric.md` (human-readable). The non-negotiables baked in there, worth keeping
-if you ever edit them:
+The report scores a call against a **leadership-based sales/diagnostic method** (seven criteria —
+leadership mindset, connection + agenda, emotional-depth questions, fit examination, the first-meeting
+offer, objection handling, and the next step). The operative rubric + output shape live in
+`prompts/analysis-prompt.md`; `references/analysis-rubric.md` explains it in human terms. The
+non-negotiables, worth keeping if you ever edit them:
 
 - **Every score is grounded in what was actually said** — a quote or close paraphrase, never a vibe.
-  This is what makes the report trustworthy instead of generic.
-- **Improvements are specific and ranked** — "open by naming the pain they mentioned in minute 2",
-  not "build more rapport".
-- **No fabrication.** If the transcript is too short, garbled, or clearly not a sales call, the report
-  says so plainly instead of inventing findings.
+- **Long, specific, timestamped feedback ending in 1–2 focus points** — reference the minute or quote
+  the moment ("when she said 'I start and quit' — that was the moment to dig into urgency"). Generic
+  notes don't help anyone improve.
+- **Don't penalize an honest non-close.** If the lead wasn't a fit and the seller reflected that without
+  pushing, that's the method working — score it well.
+- **No fabrication.** Short, garbled, or non-sales transcript → say so plainly instead of inventing.
 - **Hebrew, practical, kind.** The reader is a therapist/coach who just got judged on their selling —
-  the tone is a sharp but supportive coach, not a scorecard.
+  a sharp but supportive coach, not a scorecard.
+
+The public skill ships the **skeleton** of the method (criteria + what each checks), not the verbatim
+scripts. To analyze against the full method (exact wording, scripts), paste those materials into the
+`## תוספת מתודולוגיה של הלקוח` section at the bottom of `prompts/analysis-prompt.md` — that file stays
+on the local machine and is not published.
 
 ## Troubleshooting
 
